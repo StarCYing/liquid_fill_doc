@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="liquidFillGauge.js" language="JavaScript"></script>
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+    </style>
+</head>
+<body>
+<!-- DOC -->
+<svg id="DOC" width="97%" height="250">
+</svg>
+<!-- Bureau Row 1 -->
+<svg id="BEA" width="16%" height="200"></svg>
+<svg id="BIS" width="16%" height="200"></svg>
+<svg id="BOC" width="16%" height="200"></svg>
+<svg id="EDA" width="16%" height="200"></svg>
+<svg id="ESA" width="16%" height="200"></svg>
+<svg id="ITA" width="16%" height="200"></svg>
+<!-- Bureau Row 2 -->
+<svg id="MBDA" width="16%" height="200"></svg>
+<svg id="NIST" width="16%" height="200"></svg>
+<svg id="NOAA" width="16%" height="200"></svg>
+<svg id="NTIA" width="16%" height="200"></svg>
+<svg id="NTIS" width="16%" height="200"></svg>
+<svg id="USPTO" width="16%" height="200"></svg>
+<script language="JavaScript">
+    var config = liquidFillGaugeDefaultSettings();
+    config.circleThickness = 0.25;
+    config.circleFillGap = 0.05;
+    config.textVertPosition = 0.3;
+    config.waveAnimateTime = 2000;
+    config.waveHeight = 0.3;
+    config.waveCount = 1;
+    var gauge1 = loadLiquidFillGauge("DOC", 6, config);
+    // ***********************************************************************************
+    var config1 = liquidFillGaugeDefaultSettings();
+    config1.circleColor = "#00476B";
+    config1.textColor = "#006699";
+    config1.waveTextColor = "#4D94B8";
+    config1.waveColor = "#99C2D6";
+    config1.circleThickness = 0.1;
+    config1.circleFillGap = 0.05;
+    config1.textVertPosition = 0.3;
+    config1.waveAnimateTime = 2000;
+    config1.waveHeight = 0.3;
+    config1.waveCount = 2;
+    var gauge2= loadLiquidFillGauge("BEA", 0.06, config1);
+    // ***********************************************************************************
+    var config2 = liquidFillGaugeDefaultSettings();
+    config2.circleColor = "#7A0000";
+    config2.textColor = "#CC0000";
+    config2.waveTextColor = "#DB4D4D";
+    config2.waveColor = "#EB9999";
+    config2.circleThickness = 0.1;
+    config2.circleFillGap = 0.05;
+    config2.textVertPosition = 0.3;
+    config2.waveAnimateTime = 2500;
+    config2.waveHeight = 0.15;
+    config2.waveCount = 1;
+    var gauge3 = loadLiquidFillGauge("BIS", 0.5, config2);
+    // ***********************************************************************************
+    var config3 = liquidFillGaugeDefaultSettings();
+    config3.circleColor = "#7A5C00";
+    config3.textColor = "#CC9900";
+    config3.waveTextColor = "#DBB84D";
+    config3.waveColor = "#EBD699";
+    config3.circleThickness = 0.1;
+    config3.circleFillGap = 0.05;
+    config3.textVertPosition = 0.3;
+    config3.waveAnimateTime = 1000;
+    config3.waveHeight = 0.08;
+    config3.waveCount = 1.5;
+    var gauge4 = loadLiquidFillGauge("BOC", 0.02, config3);
+    // ***********************************************************************************
+    var config4 = liquidFillGaugeDefaultSettings();
+    config4.circleColor = "#005C1F";
+    config4.textColor = "#009933";
+    config4.waveTextColor = "#33AD5C";
+    config4.waveColor = "#99D6AD";
+    config4.circleThickness = 0.1;
+    config4.circleFillGap = 0.05;
+    config4.textVertPosition = 0.3;
+    config4.waveAnimateTime = 3000;
+    config4.waveHeight = 0.35;
+    config4.waveCount = 0.5;
+    var gauge5 = loadLiquidFillGauge("EDA", 0, config4);
+    // ***********************************************************************************
+    var config5 = liquidFillGaugeDefaultSettings();
+    config5.circleColor = "#7A007A";
+    config5.textColor = "#CC00CC";
+    config5.waveTextColor = "#D633D6";
+    config5.waveColor = "#E680E6";
+    config5.circleThickness = 0.1;
+    config5.circleFillGap = 0.05;
+    config5.textVertPosition = 0.3;
+    config5.waveAnimateTime = 1800;
+    config5.waveHeight = 0.22;
+    config5.waveCount = 1.8;
+    var gauge6 = loadLiquidFillGauge("ESA", 0, config5);
+    // ***********************************************************************************
+    var config6 = liquidFillGaugeDefaultSettings();
+    config6.circleColor = "#004C4C";
+    config6.textColor = "#009999";
+    config6.waveTextColor = "#66C2C2";
+    config6.waveColor = "#B2E0E0";
+    config6.circleThickness = 0.1;
+    config6.circleFillGap = 0.05;
+    config6.textVertPosition = 0.3;
+    config6.waveAnimateTime = 4000;
+    config6.waveHeight = 0.12;
+    config6.waveCount = 2.2;
+    var gauge7 = loadLiquidFillGauge("ITA", 0.3, config6);
+    // ***********************************************************************************
+    var config7 = liquidFillGaugeDefaultSettings();
+    config7.circleColor = "#995C00";
+    config7.textColor = "#FF9900";
+    config7.waveTextColor = "#FFAD33";
+    config7.waveColor = "#FFD699";
+    config7.circleThickness = 0.1;
+    config7.circleFillGap = 0.05;
+    config7.textVertPosition = 0.3;
+    config7.waveAnimateTime = 900;
+    config7.waveHeight = 0.08;
+    config7.waveCount = 4;
+    var gauge8 = loadLiquidFillGauge("MBDA", 0, config7);
+    // ***********************************************************************************
+    var config8 = liquidFillGaugeDefaultSettings();
+    config8.circleColor = "#3D0099";
+    config8.textColor = "#6600FF";
+    config8.waveTextColor = "#8533FF";
+    config8.waveColor = "#C299FF";
+    config8.circleThickness = 0.1;
+    config8.circleFillGap = 0.05;
+    config8.textVertPosition = 0.3;
+    config8.waveAnimateTime = 1500;
+    config8.waveHeight = 0.2;
+    config8.waveCount = 1;
+    var gauge9 = loadLiquidFillGauge("NIST", 0.1, config8);
+    // ***********************************************************************************
+    var config9 = liquidFillGaugeDefaultSettings();
+    config9.circleColor = "#3D5C99";
+    config9.textColor = "#6699FF";
+    config9.waveTextColor = "#85ADFF";
+    config9.waveColor = "#C2D6FF";
+    config9.circleThickness = 0.1;
+    config9.circleFillGap = 0.05;
+    config9.textVertPosition = 0.3;
+    config9.waveAnimateTime = 2000;
+    config9.waveHeight = 0.3;
+    config9.waveCount = 1;
+    var gauge10 = loadLiquidFillGauge("NOAA", 98.78, config9);
+    // ***********************************************************************************
+    var config10 = liquidFillGaugeDefaultSettings();
+    config10.circleColor = "#3D1F00";
+    config10.textColor = "#663300";
+    config10.waveTextColor = "#855C33";
+    config10.waveColor = "#C2AD99";
+    config10.circleThickness = 0.1;
+    config10.circleFillGap = 0.05;
+    config10.textVertPosition = 0.3;
+    config10.waveAnimateTime = 6000;
+    config10.waveHeight = 0.5;
+    config10.waveCount = 0.3;
+    var gauge11 = loadLiquidFillGauge("NTIA", 4.67, config10);
+    // ***********************************************************************************
+    var config11 = liquidFillGaugeDefaultSettings();
+    config11.circleColor = "#1F3D99";
+    config11.textColor = "#3366FF";
+    config11.waveTextColor = "#5C85FF";
+    config11.waveColor = "#ADC2FF";
+    config11.circleThickness = 0.1;
+    config11.circleFillGap = 0.05;
+    config11.textVertPosition = 0.3;
+    config11.waveAnimateTime = 3500;
+    config11.waveHeight = 0.1;
+    config11.waveCount = 5;
+    var gauge12 = loadLiquidFillGauge("NTIS", 0.004, config11);
+    // ***********************************************************************************
+    var config12 = liquidFillGaugeDefaultSettings();
+    config12.circleColor = "#7A7A00";
+    config12.textColor = "#CCCC00";
+    config12.waveTextColor = "#D6D633";
+    config12.waveColor = "#EBEB99";
+    config12.circleThickness = 0.1;
+    config12.circleFillGap = 0.05;
+    config12.textVertPosition = 0.3;
+    config12.waveAnimateTime = 2500;
+    config12.waveHeight = 0.33;
+    config12.waveCount = .8;
+    var gauge13 = loadLiquidFillGauge("USPTO", 0.03, config12);
+    // ***********************************************************************************
+
+</script>
+</body>
+</html>
